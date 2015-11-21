@@ -1,0 +1,15 @@
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false">
+    <apex:includeScript value="/lightning/lightning.out.js" />
+    <div id="lightning"/>
+ 
+    <script>
+        $Lightning.use("c:AccCaseTimelineApp", function() {
+            $Lightning.createComponent("c:AccCaseTimeline",
+                  { "recordId" : "{!$CurrentPage.parameters.id}" },
+                  "lightning",
+                  function(cmp) {
+                    // any further setup goes here
+              });
+        });
+    </script>
+</apex:page>
